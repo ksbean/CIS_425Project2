@@ -1,0 +1,36 @@
+{"geodata":{
+"city":{
+"geoname_id":4990510,"names":{
+"de":"Dearborn","en":"Dearborn","es":"Dearborn","ja":"\u30c7\u30a3\u30a2\u30dc\u30fc\u30f3","pt-BR":"Dearborn","ru":"\u0414\u0438\u0440\u0431\u043e\u0440\u043d","zh-CN":"\u8fea\u5c14\u4f2f\u6069"
+}
+}
+,"continent":
+{"code":"NA","geoname_id":6255149,"names":
+{"de":"Nordamerika","en":"North America","es":"Norteam\u00e9rica","fr":"Am\u00e9rique du Nord","ja":"\u5317\u30a2\u30e1\u30ea\u30ab","pt-BR":"Am\u00e9rica do Norte","ru":"\u0421\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u0410\u043c\u0435\u0440\u0438\u043a\u0430","zh-CN":"\u5317\u7f8e\u6d32"
+}
+}
+,"country":
+{"geoname_id":6252001,"iso_code":"US","names":
+{"de":"USA","en":"United States","es":"Estados Unidos","fr":"\u00c9tats-Unis","ja":"\u30a2\u30e1\u30ea\u30ab\u5408\u8846\u56fd","pt-BR":"Estados Unidos","ru":"\u0421\u0428\u0410","zh-CN":"\u7f8e\u56fd"
+}
+}
+,"location":{
+"accuracy_radius":5,"latitude":42.3194,"longitude":-83.2679,"metro_code":505,"time_zone":"America\/Detroit"
+}
+,"postal":
+{"code":"48128"
+}
+,"registered_country":{
+"geoname_id":6252001,"iso_code":"US","names":
+{"de":"USA","en":"United States","es":"Estados Unidos","fr":"\u00c9tats-Unis","ja":"\u30a2\u30e1\u30ea\u30ab\u5408\u8846\u56fd","pt-BR":"Estados Unidos","ru":"\u0421\u0428\u0410","zh-CN":"\u7f8e\u56fd"
+}
+}
+,"subdivisions":
+[
+{"geoname_id":5001836,"iso_code":"MI","names":
+{"en":"Michigan","es":"Michigan","fr":"Michigan","ja":"\u30df\u30b7\u30ac\u30f3\u5dde","pt-BR":"Michig\u00e3o","ru":"\u041c\u0438\u0447\u0438\u0433\u0430\u043d","zh-CN":"\u5bc6\u6b47\u6839\u5dde"
+}
+}
+]
+}
+,"help":"A free IP\/Geo data provider. There are several formats available: text, simple (just your IP), html, json, and xml. SSL and Non-SSL. Example: https:\/\/ip.briantafoya.com\/simple - Returns your IP in text format, https:\/\/ip.briantafoya.com\/json returns your IP and GeoLocation data in json format. You can also specify an IP address and format: https:\/\/ip.briantafoya.com\/192.241.240.19\/json","about":"Brought to you by briantafoya.com as a free service to all. This product includes GeoLite2 data created by MaxMind, available from http:\/\/www.maxmind.com.","privacy_policy":"Effective Date: 2016\/07\/29 - This Privacy Policy discloses the privacy practices of ip.briantafoya.com (sometimes referred to in this Privacy Policy as 'we', or 'us'), in connection with the ip.briantafoya.com website (the 'Website') and any features and online services provided by ip.briantafoya.com. We log your IP address for internal diagnostic purposes ONLY. Your data is never sold, distributed, or given away PERIOD! We believe your privacy is of the utmost importance."}
