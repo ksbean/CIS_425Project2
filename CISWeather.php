@@ -10,5 +10,9 @@
   $location = $parsed_json->{'location'}->{'city'};
   $temp_f = $parsed_json->{'current_observation'}->{'temp_f'};
   echo "Current temperature in ${location} is: ${temp_f}\n";
+<<<<<<< HEAD
   //echo $json_string;
+=======
+ // echo $json_string;
+>>>>>>> 164622f2a020dee7cef324de451b6463b0ecb015
 ?>

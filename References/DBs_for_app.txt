@@ -1,3 +1,5 @@
+Location:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 {"geodata":{
 "city":{
 "geoname_id":4990510,"names":{
@@ -34,3 +36,72 @@
 ]
 }
 ,"help":"A free IP\/Geo data provider. There are several formats available: text, simple (just your IP), html, json, and xml. SSL and Non-SSL. Example: https:\/\/ip.briantafoya.com\/simple - Returns your IP in text format, https:\/\/ip.briantafoya.com\/json returns your IP and GeoLocation data in json format. You can also specify an IP address and format: https:\/\/ip.briantafoya.com\/192.241.240.19\/json","about":"Brought to you by briantafoya.com as a free service to all. This product includes GeoLite2 data created by MaxMind, available from http:\/\/www.maxmind.com.","privacy_policy":"Effective Date: 2016\/07\/29 - This Privacy Policy discloses the privacy practices of ip.briantafoya.com (sometimes referred to in this Privacy Policy as 'we', or 'us'), in connection with the ip.briantafoya.com website (the 'Website') and any features and online services provided by ip.briantafoya.com. We log your IP address for internal diagnostic purposes ONLY. Your data is never sold, distributed, or given away PERIOD! We believe your privacy is of the utmost importance."}
+
+
+
+
+Weather:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+{ "response": 
+{ "version":"0.1", "termsofService":"http://www.wunderground.com/weather/api/d/terms.html", "features": { 
+"geolookup": 1 , "conditions": 1 
+} 
+} 
+,"location": { "type":"CITY", "country":"US", "country_iso3166":"US", "country_name":"USA", "state":"MI", "city":"Dearborn", "tz_short":"EST", "tz_long":"America/New_York", "lat":"42.31000137", "lon":"-83.16999817", "zip":"48120", "magic":"1", "wmo":"99999", "l":"/q/zmw:48120.1.99999", "requesturl":"US/MI/Dearborn.html", "wuiurl":"https://www.wunderground.com/US/MI/Dearborn.html", "nearby_weather_stations": { "airport": { "station": [ { "city":"Detroit", "state":"MI", "country":"US", "icao":"KDET", "lat":"42.40999985", "lon":"-83.01000214" } ,{ "city":"Detroit Metro", "state":"MI", "country":"US", "icao":"KDTW", "lat":"42.20999908", "lon":"-83.34999847" } ,{ "city":"Grosse Ile", "state":"MI", "country":"US", "icao":"KONZ", "lat":"42.09999847", "lon":"-83.16000366" } ,{ "city":"Troy", "state":"MI", "country":"US", "icao":"KVLL", "lat":"42.54000092", "lon":"-83.18000031" } ] } , "pws": { "station": [ { "neighborhood":"Dearborn", "city":"Dearborn", "state":"MI", "country":"US", "id":"KMIDEARB14", "lat":42.322376, "lon":-83.168396, "distance_km":1, "distance_mi":0 
+}
+,{ "neighborhood":"springwells", "city":"Dearborn", "state":"MI", "country":"US", "id":"KMIDEARB19", "lat":42.305187, "lon":-83.190430, "distance_km":1, "distance_mi":1 
+}
+,{ "neighborhood":"Harman Street", "city":"Allen Park", "state":"MI", "country":"US", "id":"KMIALLEN18", "lat":42.281467, "lon":-83.192795, "distance_km":3, "distance_mi":2 
+}
+,{ "neighborhood":"Snow Woods", "city":"Dearborn", "state":"MI", "country":"US", "id":"KMIDEARB20", "lat":42.285698, "lon":-83.225395, "distance_km":5, "distance_mi":3 
+}
+,{ "neighborhood":"Southfield And Outer Drive", "city":"Allen Park", "state":"MI", "country":"US", "id":"KMIALLEN8", "lat":42.272888, "lon":-83.213600, "distance_km":5, "distance_mi":3 
+}
+,{ "neighborhood":"Schmanski Park", "city":"Dearborn", "state":"MI", "country":"US", "id":"KMIDEARB21", "lat":42.287235, "lon":-83.237343, "distance_km":6, "distance_mi":3 
+},
+{ "neighborhood":"Allen Road", "city":"Allen Park", "state":"MI", "country":"US", "id":"KMIALLEN12", "lat":42.257538, "lon":-83.211037, "distance_km":6, "distance_mi":4 
+}
+,{ "neighborhood":"Allen Park", "city":"Allen Park", "state":"MI", "country":"US", "id":"KMIALLEN19", "lat":42.253571, "lon":-83.211075, "distance_km":7, "distance_mi":4 
+}
+,{ "neighborhood":"Dearborn Heights", "city":"Dearborn Heights", "state":"MI", "country":"US", "id":"KMIDEARB31", "lat":42.281715, "lon":-83.259216, "distance_km":7, "distance_mi":4 
+}
+,{ "neighborhood":"North Melborn Street", "city":"Dearborn", "state":"MI", "country":"US", "id":"KMIDEARB15", "lat":42.328514, "lon":-83.266678, "distance_km":8, "distance_mi":4 
+},
+{ "neighborhood":"Dearborn Hills", "city":"Dearborn", "state":"MI", "country":"US", "id":"KMIDEARB5", "lat":42.308037, "lon":-83.273727, "distance_km":8, "distance_mi":5 
+}
+,{ "neighborhood":"On the Dotte Weather Authority RC#3.2", "city":"Wyandotte", "state":"MI", "country":"US", "id":"KMIWYAND12", "lat":42.231918, "lon":-83.160568, "distance_km":8, "distance_mi":5 
+}
+,{ "neighborhood":"Crowley Park", "city":"Dearborn", "state":"MI", "country":"US", "id":"KMIDEARB30", "lat":42.288219, "lon":-83.273384, "distance_km":8, "distance_mi":5 
+}
+,{ "neighborhood":"Hydraulic Jack\u0027s Weather", "city":"Detroit", "state":"MI", "country":"US", "id":"KMIDETRO9", "lat":42.368008, "lon":-83.246307, "distance_km":8, "distance_mi":5 
+}
+,{ "neighborhood":"West Windsor", "city":"Windsor", "state":"", "country":"CA", "id":"IWINDSOR21", "lat":42.299221, "lon":-83.060005, "distance_km":9, "distance_mi":5 
+}
+,{ "neighborhood":"Taylor Town", "city":"Taylor", "state":"MI", "country":"US", "id":"KMITAYLO5", "lat":42.252922, "lon":-83.258430, "distance_km":9, "distance_mi":5 
+}
+,{ "neighborhood":"Michigan And Ulster", "city":"LaSalle", "state":"", "country":"CA", "id":"ILASALLE19", "lat":42.238598, "lon":-83.094734, "distance_km":10, "distance_mi":6 
+}
+,{ "neighborhood":"South Cameron", "city":"Windsor", "state":"ON", "country":"CA", "id":"IONWINDS13", "lat":42.289200, "lon":-83.048271, "distance_km":10, "distance_mi":6 
+}
+,{ "neighborhood":"Doppler SAL", "city":"Redford", "state":"MI", "country":"US", "id":"KMIREDFO15", "lat":42.362724, "lon":-83.274391, "distance_km":10, "distance_mi":6 
+}
+,{ "neighborhood":"Dearborn Heights/Taylor Border", "city":"Dearborn Heights", "state":"MI", "country":"US", "id":"KMIDEARB27", "lat":42.269867, "lon":-83.285690, "distance_km":10, "distance_mi":6
+}
+,{ "neighborhood":"Dix Northline", "city":"Southgate", "state":"MI", "country":"US", "id":"KMISOUTH52", "lat":42.217087, "lon":-83.199951, "distance_km":10, "distance_mi":6 
+}
+,{ "neighborhood":"Terry\u0027s Backyard Weather", "city":"Taylor", "state":"MI", "country":"US", "id":"KMITAYLO3", "lat":42.227444, "lon":-83.237579, "distance_km":10, "distance_mi":6 }
+]
+}
+}
+} 
+,"current_observation": { 
+"image": { 
+"url":"http://icons.wxug.com/graphics/wu2/logo_130x80.png", "title":"Weather Underground", "link":"http://www.wunderground.com" 
+},
+"display_location": { 
+"full":"Dearborn, MI", "city":"Dearborn", "state":"MI", "state_name":"Michigan", "country":"US", "country_iso3166":"US", "zip":"48120", "magic":"1", "wmo":"99999", "latitude":"42.31000137", "longitude":"-83.16999817", "elevation":"178.0" 
+}
+, "observation_location": { 
+"full":"Dearborn, Dearborn, Michigan", "city":"Dearborn, Dearborn", "state":"Michigan", "country":"US", "country_iso3166":"US", "latitude":"42.322376", "longitude":"-83.168396", "elevation":"597 ft" }, "estimated": { }, "station_id":"KMIDEARB14", "observation_time":"Last Updated on December 4, 3:04 PM EST", "observation_time_rfc822":"Mon, 04 Dec 2017 15:04:11 -0500", "observation_epoch":"1512417851", "local_time_rfc822":"Mon, 04 Dec 2017 15:04:14 -0500", "local_epoch":"1512417854", "local_tz_short":"EST", "local_tz_long":"America/New_York", "local_tz_offset":"-0500", "weather":"Mostly Cloudy", "temperature_string":"53.6 F (12.0 C)", "temp_f":53.6, "temp_c":12.0, "relative_humidity":"58%", "wind_string":"From the South at 6.9 MPH Gusting to 14.0 MPH", "wind_dir":"South", "wind_degrees":186, "wind_mph":6.9, "wind_gust_mph":"14.0", "wind_kph":11.1, "wind_gust_kph":"22.5", "pressure_mb":"1013", "pressure_in":"29.93", "pressure_trend":"-", "dewpoint_string":"39 F (4 C)", "dewpoint_f":39, "dewpoint_c":4, "heat_index_string":"NA", "heat_index_f":"NA", "heat_index_c":"NA", "windchill_string":"NA", "windchill_f":"NA", "windchill_c":"NA", "feelslike_string":"53.6 F (12.0 C)", "feelslike_f":"53.6", "feelslike_c":"12.0", "visibility_mi":"10.0", "visibility_km":"16.1", "solarradiation":"60", "UV":"0.0","precip_1hr_string":"0.00 in ( 0 mm)", "precip_1hr_in":"0.00", "precip_1hr_metric":" 0", "precip_today_string":"0.00 in (0 mm)", "precip_today_in":"0.00", "precip_today_metric":"0", "icon":"mostlycloudy", "icon_url":"http://icons.wxug.com/i/c/k/mostlycloudy.gif", "forecast_url":"http://www.wunderground.com/US/MI/Dearborn.html", "history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KMIDEARB14", "ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=42.322376,-83.168396", "nowcast":"" 
+}
+ }
