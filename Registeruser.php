@@ -1,4 +1,5 @@
 <?php
+session_start();
 $dbCon = mysqli_connect("localhost", "root", "pa55word", "userinfo");
 		if (mysqli_connect_errno()){
 			echo "CONNECTION FAILED";
@@ -17,6 +18,7 @@ $dbCon = mysqli_connect("localhost", "root", "pa55word", "userinfo");
 			$password=stripslashes($password);
 			if (isset($_POST['twone'])){
 			$twen=1;
+			$_SESSION['twen']=$twen;
 			}
 			else{
 			$twen=0;

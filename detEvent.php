@@ -3,7 +3,7 @@
 session_start();
 
 $rad=htmlspecialchars($_POST['radius']);
-$cat=htmlspecialchars($_POST['cat']);
+$cat=htmlspecialchars($_POST['cat_select_val']);
 
 $_SESSION['rad']=$rad;
 $_SESSION['cat']=$cat;
@@ -45,6 +45,7 @@ for($i=0;$i<$count;$i++)
  if($cat===$type)
  {
      $cat=$type;
+     echo "found type in your area {$cat} <br>";
  }
  echo "$type <br>";
 }
