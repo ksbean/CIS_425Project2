@@ -39,24 +39,28 @@ echo" <br>";
 echo "<br>";
 
 echo '<pre>' . print_r($parsed_location2, true) . '</pre>'; //see json file in array mode (testing purposes, rmv l8tr)
-
+for($i=0;$i<$count;$i++)
+{
+ $type=$parsed_location2['results'][$i]['types'][0]; //finds category type 
+ if($cat===$type)
+ {
+     $cat=$type;
+     echo "found type in your area {$cat} <br>";
+ }
+ echo "$type <br>";
+}
 
 if($temp_f=="partlycloudy")
 {
     if($temps > 70 && $chnce_of_rain <=50)
     {
         //do outdoor shit 
-        echo "based on current weather conditions, here is what you can do based on your preference:"
-        for($i=0;$i<$count;$i++)
-        {
-         $type=$parsed_location2['results'][$i]['types'][0]; //finds category type 
-         if($cat===$type)
-         {
-             $cat=$type;
-             echo "found type in your area {$cat} <br>";
-         }
-         echo "$type <br>";
-        }
+       
+       /* if($type=="park")
+       {
+            echo "based on current weather conditions, you can visit the park blah blah blah
+       }
+       
     }
 
     else{
