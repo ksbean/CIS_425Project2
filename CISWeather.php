@@ -16,7 +16,7 @@ session_start();
   $_SESSION['state']=$state;
 
   $lt=$parsed_location->{'geodata'}->{'location'}->{'latitude'};
-<<<<<<< HEAD:FindBars.php
+
   $_SESSION['lat']=$lt;
  
   $lg=$parsed_location->{'geodata'}->{'location'}->{'longitude'}; echo"<br>";
@@ -25,17 +25,14 @@ session_start();
   
 //areas around you 
 
-=======
   $lg=$parsed_location->{'geodata'}->{'location'}->{'longitude'};
  
->>>>>>> 0a5e891bb8138e2f66d8f0937ded1144e8d14aa1:CISWeather.php
   $radius=500;
   $locationinfo2 = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lt,$lg&radius=$radius&key=AIzaSyCbaWdlPCEYRrqggKX4kE_OVwddK0h1BpY");
   $parsed_location2=json_decode($locationinfo2);
   $placeinfo=$parsed_location2->{'results'};
   $dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'};
-<<<<<<< HEAD:FindBars.php
-<<<<<<< HEAD:FindBars.php
+
   $types=$placeinfo[2]->{'types'};
   
   
@@ -57,8 +54,6 @@ $count=0;
   $distance = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=$dlt,$dlg&destinations=$lt,$lg&key=AIzaSyAHh5z_t5ophKURSNuyjBsSywIQivotQOU");
   $parsed_distance=json_decode($distance);
   echo $locationinfo;
->>>>>>> 0a5e891bb8138e2f66d8f0937ded1144e8d14aa1:CISWeather.php
-  
-  
+ 
   
 ?>
