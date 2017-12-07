@@ -2,6 +2,13 @@
 
 session_start();
 
+$rad=htmlspecialchars($_POST['radius']);
+$cat=htmlspecialchars($_POST['cat']);
+
+$_SESSION['rad']=$rad;
+$_SESSION['cat']=$cat;
+
+
 $state=$_SESSION['state'];
 $city=$_SESSION['cit'];
 $json_string = file_get_contents("http://api.wunderground.com/api/aaad4f04f43767be/geolookup/conditions/q/$state/$city.json");
