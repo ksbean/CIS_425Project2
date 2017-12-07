@@ -10,17 +10,11 @@ $_SESSION['cat']=$cat;
 
 // IDs your current location 
 $locationinfo = file_get_contents("https://ip.briantafoya.com/json");
-
  $parsed_location=json_decode($locationinfo);
-
  $city = $parsed_location->{'geodata'}->{'city'}->{'names'}->{'en'};
- 
  $Stateinfo=$parsed_location->{'geodata'}->{'subdivisions'};
-
  $state=$Stateinfo[0]->iso_code;
- 
  $lt=$parsed_location->{'geodata'}->{'location'}->{'latitude'};
-
  $lg=$parsed_location->{'geodata'}->{'location'}->{'longitude'}; echo"<br>";
 
 //get weather condition based on current city/state
@@ -28,23 +22,32 @@ $locationinfo = file_get_contents("https://ip.briantafoya.com/json");
 $json_string = file_get_contents("http://api.wunderground.com/api/aaad4f04f43767be/geolookup/conditions/q/$state/$city.json");
 $parsed_json = json_decode($json_string);
 $location = $parsed_json->{'location'}->{'city'};
-$temp_f = $parsed_json->{'current_observation'}->{'icon'};
-$temps=(int)$parsed_json->{'current_observation'}->{'temp_f'};
-$chnce_of_rain=(int)$parsed_json->{'current_observation'}->{'precip_today_metric'};
+$temp_f = $parsed_json->{'current_observation'}->{'icon'}; //weather condition i.e. cloudy
+$temps=(int)$parsed_json->{'current_observation'}->{'temp_f'}; //actual temp (in deg)
+$chnce_of_rain=(int)$parsed_json->{'current_observation'}->{'precip_today_metric'}; //% chance of rain
 
 echo "current temperature in {$location} is: {$temps} with weather condition as: {$temp_f}";
 
-//areas around you
+$lg=$parsed_location->{'geodata'}->{'location'}->{'longitude'};
 
-  $long=$parsed_location->{'geodata'}->{'location'}->{'longitude'};
+
+ $locationinfo2 = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lt,$lg&radius=$radius&key=AIzaSyCbaWdlPCEYRrqggKX4kE_OVwddK0h1BpY");
+ $parsed_location2=json_decode($locationinfo2,true);
+ //$dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'}; // save later when using dist. API 
+
+$count=count($parsed_location2); //takes count of array size from json file 
+echo $count;
+
+for($i=0;$i<$count;$i++)
+{
+ $type=$parsed_location2['results'][$i]['types'][0]; //finds category type 
+ echo "$type <br>";
+}
+
+
+
  
-  $radius=$rad;
-  $locationinfo2 = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lt,$lg&radius=$radius&key=AIzaSyCbaWdlPCEYRrqggKX4kE_OVwddK0h1BpY");
-  $parsed_location2=json_decode($locationinfo2);
-  $placeinfo=$parsed_location2->{'results'};
-  //$dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'};
-
- // $types=$placeinfo[2]->{'types'};
+ 
 
 if($temp_f=="partlycloudy")
 {
