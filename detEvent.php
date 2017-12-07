@@ -32,7 +32,7 @@ echo "current temperature in {$location} is: {$temps}. Current Weather codition:
  $parsed_location2=json_decode($locationinfo2,true);
  //$dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'}; // save later when using dist. API 
 
-$count=count($parsed_location2)-1; //takes count of array size from json file 
+$count=count($parsed_location2['results']); //counts how many places found within user's radius entry
 echo "$count <br>";
 
 echo" <br>";
@@ -60,6 +60,7 @@ if($temp_f=="partlycloudy")
        {
             echo "based on current weather conditions, you can visit the park blah blah blah
        }
+       */
        
     }
 
