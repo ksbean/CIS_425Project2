@@ -6,6 +6,7 @@ session_start();
   $locationinfo = file_get_contents("https://ip.briantafoya.com/json");
  
   $parsed_location=json_decode($locationinfo);
+  $_SESSION['psl']=$parsed_location;
 
   $city = $parsed_location->{'geodata'}->{'city'}->{'names'}->{'en'};
   $_SESSION['cit']=$city;
@@ -29,11 +30,25 @@ session_start();
  
   $radius=500;
   $locationinfo2 = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lt,$lg&radius=$radius&key=AIzaSyCbaWdlPCEYRrqggKX4kE_OVwddK0h1BpY");
-  $parsed_location2=json_decode($locationinfo2);
-  $placeinfo=$parsed_location2->{'results'};
-  $dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'};
+  $parsed_location2=json_decode($locationinfo2,true);
+  //$placeinfo=$parsed_location2->{'results'};
+ // $types=$placeinfo->{'types'};
+ //echo "<pre" .print_r($parsed_location2,true) . "</pre>";
+// $types=$parsed_location2['results'][2]['types'][2]; 
 
-  $types=$placeinfo[2]->{'types'};
+ $count=count($parsed_location2); //takes count of array size from json file 
+echo $count;
+
+for($i=0;$i<$count;$i++)
+{
+  $type=$parsed_location2['results'][$i]['types'][0]; //finds category type 
+  echo "$type <br>";
+}
+
+
+
+  //$dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'};
+
   
   
 //temperature
@@ -42,18 +57,17 @@ session_start();
   $location = $parsed_json->{'location'}->{'city'};
   $temp_f = $parsed_json->{'current_observation'}->{'icon'};
 
-$length=count($placeinfo);
-$count=0;
-
-
-  echo "Current temperature in ${location} is: ${temp_f}";
 
 
 
-//direction dist.
+ // echo "Current temperature in ${location} is: ${temp_f}";
+
+
+
+/*direction dist.
   $distance = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=$dlt,$dlg&destinations=$lt,$lg&key=AIzaSyAHh5z_t5ophKURSNuyjBsSywIQivotQOU");
   $parsed_distance=json_decode($distance);
-  echo $locationinfo;
+  //echo $locationinfo;
  
-  
+  */
 ?>
