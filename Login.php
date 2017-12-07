@@ -12,7 +12,8 @@ if (isset($_POST['submit']) && isset($_POST['username']) && isset($_POST['passwo
 		$password=stripslashes($password);
 		
 		
-		$dbCon = mysqli_connect("localhost", "root", "pa55word", "userinfo");
+
+		$dbCon = mysqli_connect("localhost", "root",NULL,"userinfo");
 		if (mysqli_connect_errno()){
 			echo "CONNECTION FAILED";
 			echo "<br>" + mysqli_connect_errno(); 
@@ -39,4 +40,5 @@ if (isset($_POST['submit']) && isset($_POST['username']) && isset($_POST['passwo
 else{
 echo "FAILED"; 
 }
+
 ?>
