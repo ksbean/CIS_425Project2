@@ -34,7 +34,6 @@ session_start();
   $parsed_location2=json_decode($locationinfo2);
   $placeinfo=$parsed_location2->{'results'};
   $dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'};
-  $dlg=$placeinfo[2]->{'geometry'}->{'location'}->{'lng'};
 <<<<<<< HEAD:FindBars.php
   $types=$placeinfo[2]->{'types'};
   
