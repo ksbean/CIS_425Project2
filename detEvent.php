@@ -203,9 +203,6 @@ else if($temp_f=="partlysunny")
     }
 }
 
-
-
-
 else if($temp_f=="snow")
 {
     if($temps > 32)
@@ -258,6 +255,5 @@ else if($temp_f=="unkown")
 //using weather API to determine what place/thing to do based on location & radius
 
 //weather API to determine temp & condition 
-
 
 ?>
