@@ -42,6 +42,10 @@ echo '<pre>' . print_r($parsed_location2, true) . '</pre>';
 for($i=0;$i<$count;$i++)
 {
  $type=$parsed_location2['results'][$i]['types'][0]; //finds category type 
+ if($cat===$type)
+ {
+     $cat=$type;
+ }
  echo "$type <br>";
 }
 
@@ -252,6 +256,7 @@ else if($temp_f=="snow")
 
     else{
         //do something else that's warmer
+
     }
 }
 
