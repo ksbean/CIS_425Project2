@@ -26,23 +26,25 @@ $temp_f = $parsed_json->{'current_observation'}->{'icon'}; //weather condition i
 $temps=(int)$parsed_json->{'current_observation'}->{'temp_f'}; //actual temp (in deg)
 $chnce_of_rain=(int)$parsed_json->{'current_observation'}->{'precip_today_metric'}; //% chance of rain
 
-echo "current temperature in {$location} is: {$temps} with weather condition as: {$temp_f}";
+echo "current temperature in {$location} is: {$temps} with weather condition as: {$temp_f} <br>";
 
-$lg=$parsed_location->{'geodata'}->{'location'}->{'longitude'};
-
-
- $locationinfo2 = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lt,$lg&radius=$radius&key=AIzaSyCbaWdlPCEYRrqggKX4kE_OVwddK0h1BpY");
+ $locationinfo2 = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lt,$lg&radius=$rad&key=AIzaSyCbaWdlPCEYRrqggKX4kE_OVwddK0h1BpY");
  $parsed_location2=json_decode($locationinfo2,true);
  //$dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'}; // save later when using dist. API 
 
-$count=count($parsed_location2); //takes count of array size from json file 
-echo $count;
+$count=count($parsed_location2)-1; //takes count of array size from json file 
+echo "$count <br>";
 
+echo" <br>";
+echo "<br>";
+
+echo '<pre>' . print_r($parsed_location2, true) . '</pre>';
 for($i=0;$i<$count;$i++)
 {
  $type=$parsed_location2['results'][$i]['types'][0]; //finds category type 
  echo "$type <br>";
 }
+
 
 
 
