@@ -26,33 +26,41 @@ if (isset($_POST['submit']) && isset($_POST['username']) && isset($_POST['passwo
 			}
 			else{
 				//change location successful login store user and password
-				echo"Hello";
+				//echo"Hello";
 				//Search Radius
 				//what category 
-				$link = mysql_connect('localhost', 'root', 'pa55word');
-				if (!$link) {
-					die('Could not connect: ' . mysql_error());
-				}
-				if (!mysql_select_db('userinfo')) {
-					die('Could not select database: ' . mysql_error());
-				}
-				$result = mysql_query("SELECT `twentyone` FROM `users` WHERE `username`= '$username' AND `password`='$password'");
-				if (!$result) {
-					die('Could not query:' . mysql_error());
-				}
-				if( mysql_result($result, 0)==0){ // outputs third employee's name
-				mysql_close($link);
-				header("Location: SearchpageN.html");
+				$link = mysqli_connect("localhost","root","pa55word","userinfo");
+				if (mysqli_connect_errno()){
+					echo "CONNECTION FAILED";
+					echo "<br>" + mysqli_connect_errno(); 
 				}
 				else{
-					header("Location: Searchpage.html");
+				$result ="SELECT `twentyone` FROM `users` WHERE `username`= '$username' AND `password`='$password'";
+				$mysqlbitChk=mysqli_query($link,$result);
+				$row=mysqli_fetch_array($mysqlbitChk,MYSQLI_NUM);
+				if(mysqli_num_rows($mysqlbitChk)==0) //not found 
+				{
+					echo "not found";
+					
 				}
+				else if($row['twentyone']==0) {
+					header("Location: SearchpageN.html"); //not 21 
+					}
+				else {
+				header("Location: Searchpage.html"); 
 
+			
+				}
+			
+				
 							} 
 							
 						
 						}
+						mysqli_close();
+					}
 				}
+				
 				else{
 				echo "FAILED"; 
 				}
