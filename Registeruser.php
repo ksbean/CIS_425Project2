@@ -25,6 +25,7 @@ $dbCon = mysqli_connect("localhost", "root", "pa55word", "userinfo");
 			$ins = "INSERT INTO `users`(`username`, `password`, `twentyone`) VALUES ('$username','$password','$twen')";
 			$mysqlbit= mysqli_query($dbCon,$ins);
 			}
-			header("Location: Location.html");
+			header("Location: Form.html");
+		}
 		}
 ?>

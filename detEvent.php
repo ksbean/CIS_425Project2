@@ -1,13 +1,10 @@
 <?php
 
 session_start();
-
+$bool=0;
 $rad=htmlspecialchars($_POST['radius']);
 $cat=htmlspecialchars($_POST['cat_select_val']);
-
-$_SESSION['rad']=$rad;
-$_SESSION['cat']=$cat;
-
+//echo $cat;
 // IDs your current location 
 $locationinfo = file_get_contents("https://ip.briantafoya.com/json");
  $parsed_location=json_decode($locationinfo);
@@ -33,23 +30,34 @@ echo "current temperature in {$location} is: {$temps}. Current Weather codition:
  //$dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'}; // save later when using dist. API 
 
 $count=count($parsed_location2['results']); //counts how many places found within user's radius entry
-echo "$count <br>";
+//echo '<pre>' . print_r($parsed_location2, true) . '</pre>'; //see json file in array mode (testing purposes, rmv l8tr)
 
-echo" <br>";
-echo "<br>";
 
-echo '<pre>' . print_r($parsed_location2, true) . '</pre>'; //see json file in array mode (testing purposes, rmv l8tr)
-for($i=0;$i<$count;$i++)
-{
- $type=$parsed_location2['results'][$i]['types'][0]; //finds category type 
- if($cat===$type)
- {
-     $cat=$type;
-     echo "found type in your area {$cat} <br>";
- }
- echo "$type <br>";
+for($i=0;$i<$count;$i++){
+	$count2=count($parsed_location2['results'][$i]['types']);
+	
+	$name=$parsed_location2['results'][$i]['name'];
+	
+	for($j=0;$j<$count2;$j++){
+		$type=$parsed_location2['results'][$i]['types'][$j]; //finds category type 
+		//If conditions are bad skip outside entertainment
+		if(strpos($cat,$type) && $bool==0){
+			$lat=$parsed_location2['results'][$i]['geometry']['location']['lat'];
+			$lon=$parsed_location2['results'][$i]['geometry']['location']['lng'];
+			echo "{$name}, ";
+			echo "{$type}<br>";
+			echo "{$lat}, ";
+			echo "{$lon} <br>";
+			$distance = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=$lt,$lg&destinations=$lat,$lon&key=AIzaSyAHh5z_t5ophKURSNuyjBsSywIQivotQOU");
+			$parsed_distance=json_decode($distance);
+			echo $distance;
+			$bool=1;
+		}
+		
+	}
+	$bool=0;
 }
-
+/*
 if($temp_f=="partlycloudy")
 {
     if($temps > 70 && $chnce_of_rain <=50)
@@ -60,7 +68,7 @@ if($temp_f=="partlycloudy")
        {
             echo "based on current weather conditions, you can visit the park blah blah blah
        }
-       */
+       
        
     }
 
@@ -302,5 +310,5 @@ else if($temp_f=="unkown")
 //using weather API to determine what place/thing to do based on location & radius
 
 //weather API to determine temp & condition 
-
+*/
 ?>

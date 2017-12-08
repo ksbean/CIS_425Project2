@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Activity Finder</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="">
+</head>
+<header>
+    <h1>Search Parameter Entrance</h1>
+</header>
+
+<body>
+    <form id="form1" class='Uform' name="form1" method="post" action="detEvent.php">
+        <div id="formfitter">
+            <p class="inputtxt">Radius:</p> <input class="Uinfo" type="number" name="radius" id="radius" min="0" max="50000" required> <br>
+
+            <p class="inputtxt">Category:</p>
+			
+				<select required id='select' name='cat_select_val'> 
+							<option value='school university'>School</option>
+							<option value='airport'>Airport</option>
+							<option value='zoo spa park museum movie_theater campground amusement_park aquarium art_gallery bowling_alley spa'>Entertainment</option>
+							<option value='insurance_agency finance atm bank'>Bank</option>
+							<option value='meal_delivery meal_takeaway food restaurant bakery cafe'>Restaurant</option>
+							<option value='beauty_salon'>Boutiques</option>
+							<option value='store clothing_store shoe_store health shopping_mall shoe_store grocery_or_supermarketdepartment_store convenience_store clothing_store bicycle_store book_store'>Store</option>
+							<option value='church'>Church</option>
+							<option value='gym'>Gym</option>
+							
+				</select>
+            
+        </div>
+        <button id="S1" class="sub" type="submit" name="submit" style="cursor: pointer;">Search</button>
+
+    </form>
+    </div>
+</body>
+
+</html>
