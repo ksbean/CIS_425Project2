@@ -37,18 +37,19 @@ if (isset($_POST['submit']) && isset($_POST['username']) && isset($_POST['passwo
 				else{
 				$result ="SELECT `twentyone` FROM `users` WHERE `username`= '$username' AND `password`='$password'";
 				$mysqlbitChk=mysqli_query($link,$result);
-				$row=mysqli_fetch_array($mysqlbitChk,MYSQLI_NUM);
+				$row=$mysqlbitChk->fetch_assoc();
 				if(mysqli_num_rows($mysqlbitChk)==0) //not found 
 				{
 					echo "not found";
 					
 				}
-				else if($row['twentyone']!=0) {
-					header("Location: Searchpage.html"); // 21 
+				else if($row["twentyone"]=="0") {
+					header("Location: SearchpageN.html"); // 21 
 					}
-				else if($row['twentyone']==0)
+				else if ($row["twentyone"]!="0")
 				{
-				header("Location: SearchpageN.html"); 
+					//echo "fuck you";
+				header("Location: Searchpage.html"); 
 				}
 			
 				
@@ -56,7 +57,7 @@ if (isset($_POST['submit']) && isset($_POST['username']) && isset($_POST['passwo
 							
 						
 						}
-						mysqli_close();
+						//mysqli_close();
 					}
 				}
 				
