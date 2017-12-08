@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2017 at 02:13 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Dec 08, 2017 at 10:11 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -45,7 +47,7 @@ CREATE TABLE `searches` (
 CREATE TABLE `users` (
   `username` varchar(25) NOT NULL,
   `password` text NOT NULL,
-  `twentyone` int(1) NOT NULL
+  `twentyone` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -53,8 +55,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `twentyone`) VALUES
-('ksbean', 'Fnmmmc', 1),
-('petros', 'petros1', 1);
+('hi', 'hi', '0'),
+('ksbean', 'Fnmmmc', '1'),
+('petros', 'petros1', '1');
 
 --
 -- Indexes for dumped tables
@@ -82,6 +85,7 @@ ALTER TABLE `users`
 --
 ALTER TABLE `searches`
   MODIFY `searchid` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- Constraints for dumped tables
 --
@@ -91,6 +95,7 @@ ALTER TABLE `searches`
 --
 ALTER TABLE `searches`
   ADD CONSTRAINT `searches_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
