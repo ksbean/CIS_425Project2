@@ -21,7 +21,7 @@
 			$mysqlbitChk= mysqli_query($dbCon,$Chksql);	
 			if(mysqli_num_rows($mysqlbitChk) == 0){
 			echo "Not found";
-		}
+			}
 			else{
 				$link = mysqli_connect("localhost","root","pa55word","userinfo");
 				if (mysqli_connect_errno()){
@@ -32,6 +32,7 @@
 					$result ="SELECT `twentyone` FROM `users` WHERE `username`= '$username' AND `password`='$password'";
 					$mysqlbitChk=mysqli_query($link,$result);
 					$row=$mysqlbitChk->fetch_assoc();
+					$_SESSION['username']=$username;
 					if(mysqli_num_rows($mysqlbitChk)==0) //not found 
 					{
 						echo "not found";
@@ -40,7 +41,6 @@
 					else if($row["twentyone"]=="0") {
 						header("Location: ../SearchpageN.html"); // 21 
 					}
-
 					else{
 						header("Location: ../Searchpage.html"); 
 					}

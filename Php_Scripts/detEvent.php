@@ -2,9 +2,10 @@
 
 session_start();
 $bool=0;
+$user=$_SESSION['username'];
 $rad=htmlspecialchars($_POST['radius']);
 $cat=htmlspecialchars($_POST['cat_select_val']);
-//echo $cat;
+$_SESSION['radius']=$rad;
 // IDs your current location 
 $locationinfo = file_get_contents("https://ip.briantafoya.com/json");
  $parsed_location=json_decode($locationinfo);
@@ -25,8 +26,10 @@ $chnce_of_rain=(int)$parsed_json->{'current_observation'}->{'precip_today_metric
 echo "<header></header>";
 echo "<body><h1 style=' text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	 text-align:center;
-	 font-size:2em;'>Current temperature in {$location} is {$temps}. Current weather codition is {$temp_f}</h1></body>";
-
+	 font-size:2em;'>Current temperature in {$location} is {$temps}.<br> Current weather condition is {$temp_f}</h1></body>";
+	$_SESSION['city']=$location;
+	$_SESSION['weather']=$temp_f;
+	$_SESSION['state']=$state;
  $locationinfo2 = file_get_contents("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lt,$lg&radius=$rad&key=AIzaSyCbaWdlPCEYRrqggKX4kE_OVwddK0h1BpY");
  $parsed_location2=json_decode($locationinfo2,true);
  //$dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'}; // save later when using dist. API 
@@ -284,7 +287,7 @@ for($i=0;$i<$count;$i++){
 		else if(strpos($cat,$type)!==false && $bool==0){
 			$lat=$parsed_location2['results'][$i]['geometry']['location']['lat'];
 			$lon=$parsed_location2['results'][$i]['geometry']['location']['lng'];
-			echo"<input  type='radio' name='choicebtn' style='padding-left:0px;'class='choicebtn' value='{$lat} {$lon} {$name}' required>{$name}, {$type}</input>";
+			echo"<input  type='radio' name='choicebtn' style='padding-left:0px;'class='choicebtn' value='{$lat} {$lon} {$name} {$type}' required>{$name}, {$type}</input>";
 			$distance = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=$lt,$lg&destinations=$lat,$lon&key=AIzaSyAHh5z_t5ophKURSNuyjBsSywIQivotQOU");
             $parsed_distance=json_decode($distance,true);
 

@@ -1,42 +1,61 @@
 <?php
-if (isset($_POST['submit'])) {
-$choice=strip_tags($_POST['choicebtn']);
-$first=strpos ($choice ," ");
-$second=strpos ($choice ," ",$first+1);
-$latlonar=explode (" " ,$choice);
-$choice1=substr($choice,$second);
-echo "<!DOCTYPE html>
-<html>
-  <head>
-  <link rel='stylesheet' href='../Styles/IndexStyles.css'>
-  </head>
-  <body>
-    <h3>$choice1</h3>
-	<h3> Latitude: $latlonar[0], Longitude: $latlonar[1]</h3>
-    <div id='map'></div>
-	  <script>
-      function initMap() {
-        var uluru = {lat: {$latlonar[0]}, lng: {$latlonar[1]}};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 11,
-		  center:uluru,
-          
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
+	if (isset($_POST['submit'])) {
+		session_start();
+		$choice=strip_tags($_POST['choicebtn']);
+		$first=strpos ($choice ," ");
+		$second=strpos ($choice ," ",$first+1);
+		$latlonar=explode (" " ,$choice);
+		$choice1=substr($choice,$second);
 
-      }
-    </script>
-	<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDT3D0049OCasuIhyeOzTHDuRRfppcMM74&callback=initMap'
-  type='text/javascript'></script>
-  </script>
-  <form id='form1' class='Uform' name='form1' method='post' action='Index.html'>
-        <button id='S1' class='sub' type='submit' name='submit' style='cursor: pointer;'>Search</button>
-
-  </body>
-</html>";
-}
-//AIzaSyDT3D0049OCasuIhyeOzTHDuRRfppcMM74
+		$user=$_SESSION['username'];
+		$cat=$latlonar[sizeof($latlonar)-1];
+		$rad=$_SESSION['radius'];
+		$location=$_SESSION['city'];
+		$weather=$_SESSION['weather'];
+		$state=$_SESSION['state'];
+		$dbCon = mysqli_connect("localhost", "root","pa55word","userinfo");
+		if (mysqli_connect_errno()){
+			echo "CONNECTION FAILED";
+			echo "<br>" + mysqli_connect_errno(); 
+		}
+		else{	
+			$Chksql = "INSERT INTO `searches`(`radius`, `category`, `username`, `state`, `city`, `weather`)
+			VALUES ('$rad','$cat','$user','$state','$location','$weather')" ;
+			$mysqlbitChk= mysqli_query($dbCon,$Chksql);
+			echo "
+				<!DOCTYPE html>
+					<html>
+					  <head>
+						<style>
+						   #map {
+							height: 400px;
+							width: 100%;
+						   }
+						</style>
+					  </head>
+					  <body>
+						<h3>$choice1</h3>
+						<div id='map'></div>
+						<script>
+						  function initMap() {
+							var uluru = {lat: $latlonar[0], lng: $latlonar[1]};
+							var map = new google.maps.Map(document.getElementById('map'), {
+							  zoom: 15,
+							  center: uluru
+							});
+							var marker = new google.maps.Marker({
+							  position: uluru,
+							  map: map
+							});
+						  }
+						</script>
+						<script async defer
+						src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDT3D0049OCasuIhyeOzTHDuRRfppcMM74&callback=initMap'>
+						</script>
+					  </body>
+					</html>";
+			}
+	}
+	mysqli_close();
+	session_destroy();
 ?>

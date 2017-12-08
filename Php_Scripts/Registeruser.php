@@ -1,5 +1,6 @@
 <?php
 session_start();
+$user=$_SESSION['username'];
 $dbCon = mysqli_connect("localhost", "root", "pa55word", "userinfo");
 		if (mysqli_connect_errno()){
 			echo "CONNECTION FAILED";
