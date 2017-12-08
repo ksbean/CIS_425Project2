@@ -48,7 +48,7 @@ if (isset($_POST['submit']) && isset($_POST['username']) && isset($_POST['passwo
 					}
 				else if ($row["twentyone"]!="0")
 				{
-					//echo "fuck you";
+					
 				header("Location: Searchpage.html"); 
 				}
 			
