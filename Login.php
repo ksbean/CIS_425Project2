@@ -43,13 +43,12 @@ if (isset($_POST['submit']) && isset($_POST['username']) && isset($_POST['passwo
 					echo "not found";
 					
 				}
-				else if($row['twentyone']==0) {
-					header("Location: SearchpageN.html"); //not 21 
+				else if($row['twentyone']!=0) {
+					header("Location: Searchpage.html"); // 21 
 					}
-				else {
-				header("Location: Searchpage.html"); 
-
-			
+				else if($row['twentyone']==0)
+				{
+				header("Location: SearchpageN.html"); 
 				}
 			
 				
