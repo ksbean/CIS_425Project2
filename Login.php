@@ -46,9 +46,8 @@ if (isset($_POST['submit']) && isset($_POST['username']) && isset($_POST['passwo
 				else if($row["twentyone"]=="0") {
 					header("Location: SearchpageN.html"); // 21 
 					}
-				else if ($row["twentyone"]!="0")
-				{
-					
+
+				else{
 				header("Location: Searchpage.html"); 
 				}
 			
@@ -57,7 +56,7 @@ if (isset($_POST['submit']) && isset($_POST['username']) && isset($_POST['passwo
 							
 						
 						}
-						//mysqli_close();
+						mysqli_close();
 					}
 				}
 				
