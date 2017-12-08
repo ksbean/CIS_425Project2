@@ -33,7 +33,7 @@ $dlt=$placeinfo[2]->{'geometry'}->{'location'}->{'lat'};
 
   echo "Current temperature in ${location} is: ${temp_f}";
 
-direction dist.
+//direction dist.
   $distance = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=$dlt,$dlg&destinations=$lt,$lg&key=AIzaSyAHh5z_t5ophKURSNuyjBsSywIQivotQOU");
   $parsed_distance=json_decode($distance);
   //echo $locationinfo;
