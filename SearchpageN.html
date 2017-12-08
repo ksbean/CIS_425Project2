@@ -4,20 +4,20 @@
 <head>
     <title>Activity Finder</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="Styles/IndexStyles.css">
 </head>
 <header>
     <h1>Search Parameter Entrance</h1>
 </header>
 
 <body>
-    <form id="form1" class='Uform' name="form1" method="post" action="detEvent.php">
+    <form id="form1" class='Uform' name="form1" method="post" action="Php_Scripts/detEvent.php">
         <div id="formfitter">
-            <p class="inputtxt">Radius:</p> <input class="Uinfo" type="number" name="radius" id="radius" min="0" max="50000" required> <br>
+            <p class="inputtxt">Radius: <input class="Uinfo" type="number" name="radius" id="radius" min="0" max="50000" required> </p>
 
-            <p class="inputtxt">Category:</p>
+            <p class="inputtxt">Category:
 			
-				<select required id='select' name='cat_select_val'> 
+				<select required id='select' class="Uinfo" name='cat_select_val'></p> 
 							<option value='school university'>School</option>
 							<option value='airport'>Airport</option>
 							<option value='zoo spa park museum movie_theater campground amusement_park aquarium art_gallery bowling_alley spa'>Entertainment</option>
