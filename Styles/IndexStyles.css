@@ -20,8 +20,6 @@ body {
     margin: 0px;
 }
 
-footer {}
-
 .choicebtn {
     font-size: 30px;
 }
@@ -34,7 +32,7 @@ footer {}
     padding-top: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
-    border: outset gray 7px;
+    border: outset gray 10px;
 }
 
 .sub {
