@@ -57,7 +57,7 @@
 					</html>";
 			}
 	}
-	mysqli_close();
+	mysqli_close($dbCon);
 	session_destroy();
 ?>
 
