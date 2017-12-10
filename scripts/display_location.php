@@ -25,7 +25,8 @@
 			echo "
 				<!DOCTYPE html>
 					<html>
-					  <head>
+						<head>
+						<link rel='stylesheet' href='Styles/MapStyles.css'>
 						<style>
 						   #map {
 							height: 400px;
@@ -59,3 +60,15 @@
 	mysqli_close();
 	session_destroy();
 ?>
+
+<!Doctype html> 
+<head> 
+<link rel="stylesheet" href="../Styles/IndexStyles.css">
+</head>
+
+<footer> 
+<button id="sub" type"button" onclick="window.location= '../Index.html'">Return to Home</button>  
+
+</footer> 
+
+</html> 

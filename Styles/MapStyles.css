@@ -1,4 +1,26 @@
  #map {
-        height: 400px;
-        width: 100%;
-       }
+     height: 400px;
+     width: 100%;
+ }
+ 
+ .sub {
+     display: inline;
+     margin-right: 10px;
+     margin-bottom: 10px;
+     border: outset 3px;
+     padding-left: 10px;
+     padding-right: 10px;
+     font-style: italic;
+ }
+ 
+ h3 {
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-style: italic;
+     text-align: center;
+     padding-left: 40%;
+     color: white;
+ }
+ 
+ body {
+     background: rgb(90, 90, 216);
+ }

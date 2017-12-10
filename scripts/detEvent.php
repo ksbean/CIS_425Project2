@@ -2,7 +2,7 @@
 
 session_start();
 $bool=0;
-$tne=$_SESSION['twentyone'];
+
 $user=$_SESSION['username'];
 $rad=htmlspecialchars($_POST['radius']);
 $cat=htmlspecialchars($_POST['cat_select_val']);
@@ -334,9 +334,9 @@ echo"</ul> </form>";
 ?>
 
 <!Doctype html> 
-
+<head> <link rel="stylesheet" href="../Styles/IndexStyles.css"> </head> 
 <footer> 
-<button type="button" onclick="goBack()">Go Back</button>
+<button id="sub" type="button" onclick="goBack()">Go Back</button>
 
 <script>
 function goBack() {

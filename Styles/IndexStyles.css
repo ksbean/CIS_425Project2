@@ -44,6 +44,7 @@ footer {}
     border: outset 3px;
     padding-left: 10px;
     padding-right: 10px;
+    font-style: italic;
 }
 
 .Uinfo {
