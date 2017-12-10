@@ -5,6 +5,13 @@ $bool=0;
 
 $user=$_SESSION['username'];
 $rad=htmlspecialchars($_POST['radius']);
+
+function getMeters($i) { //converts mi->m for google Maps API 
+    return $i*1609.344;
+} 
+$convert=getMeters($rad);
+$rad=$convert;
+
 $cat=htmlspecialchars($_POST['cat_select_val']);
 $_SESSION['radius']=$rad;
 // IDs your current location 
@@ -337,6 +344,7 @@ echo"</ul> </form>";
 <head> <link rel="stylesheet" href="../Styles/IndexStyles.css"> </head> 
 <footer> 
 <button id="sub" type="button" onclick="goBack()">Go Back</button>
+<button type="button" onclick="window.location= '../Index.html'"> Logout</button> 
 
 <script>
 function goBack() {

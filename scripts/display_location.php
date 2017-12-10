@@ -26,7 +26,7 @@
 				<!DOCTYPE html>
 					<html>
 						<head>
-						<link rel='stylesheet' href='Styles/MapStyles.css'>
+						<link rel='stylesheet' href='../Styles/MapStyles.css'>
 						<style>
 						   #map {
 							height: 400px;
@@ -67,7 +67,7 @@
 </head>
 
 <footer> 
-<button id="sub" type"button" onclick="window.location= '../Index.html'">Return to Home</button>  
+<div> <button id="sub" type"button" onclick="window.location= '../Index.html'">Logout</button>  </div> 
 
 </footer> 
 
