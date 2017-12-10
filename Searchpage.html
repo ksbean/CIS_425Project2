@@ -29,8 +29,13 @@
 								<option value='lodging' name='hotel'>Hotel</option>
 						</select>
         </div>
-        <button id="S3" class="sub" type="submit" name="submit" style="cursor: pointer;">Search</button>
+        <button id="S3" class="sub" type="submit" name="submit" onclick="myFunction();" style="cursor: pointer;">Search</button>
     </form>
+    <script>
+        function myFunction() {
+            alert("Searching for results, this may take a few seconds. ");
+        }
+    </script>
 </body>
 
 </html>

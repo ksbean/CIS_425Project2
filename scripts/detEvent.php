@@ -2,6 +2,7 @@
 
 session_start();
 $bool=0;
+$tne=$_SESSION['twentyone'];
 $user=$_SESSION['username'];
 $rad=htmlspecialchars($_POST['radius']);
 $cat=htmlspecialchars($_POST['cat_select_val']);
@@ -270,21 +271,35 @@ function det_weath($temp_f,$temps,$chnce_of_rain){
 
 echo"<link rel='stylesheet' href='../Styles/IndexStyles.css'>
 <form id='form4' class='Uform' style='width: 70%; ' name='form4' method='post' action='display_location.php'><ul id='matchlist'>";
-for($i=0;$i<$count;$i++){
+$notfound=0;
+$ttl=0;
+
+
+for($a=0;$a<$count;$a++){
+    $total=count($parsed_location2['results'][$a]['types']);
+    for($b=0;$b<$total;$b++){
+        $ttl++;
+    }
+}
+
+for($i=0;$i<$count;$i++)
+{
 	$count2=count($parsed_location2['results'][$i]['types']);
-	
-	$name=$parsed_location2['results'][$i]['name'];
+    
+    $name=$parsed_location2['results'][$i]['name'];
 	
 	for($j=0;$j<$count2;$j++){
-		$type=$parsed_location2['results'][$i]['types'][$j]; //finds category type 
-        //If conditions are bad skip outside entertainment
-       if($type=="park" || $type=="beach" || $type=='outside' && det_weath( $temp_f,$temps,$chnce_of_rain)){
+        $type=$parsed_location2['results'][$i]['types'][$j]; //finds category type 
         
+        //If conditions are bad skip outside entertainment
+       if($type=="park" || $type=="beach" || $type=='outside' && det_weath( $temp_f,$temps,$chnce_of_rain)){ 
             ;
             $bool=1;
 
         }
-		else if(strpos($cat,$type)!==false && $bool==0){
+        //if not, list how many miles away/ duration to get to the place
+
+		else if(strpos($cat,$type)!==false && $bool==0){ 
 			$lat=$parsed_location2['results'][$i]['geometry']['location']['lat'];
 			$lon=$parsed_location2['results'][$i]['geometry']['location']['lng'];
 			echo"<input  type='radio' name='choicebtn' style='padding-left:0px;'class='choicebtn' value='{$lat} {$lon} {$name} {$type}' required>{$name}, {$type}</input>";
@@ -298,12 +313,23 @@ for($i=0;$i<$count;$i++){
             echo "{$dist}, {$dur} away. <br>";
 			$bool=1;
         }
-    
-	}
-	$bool=0;
+        else if(strpos($cat,$type)===false) // if no place specified by the category filter  is found within the area 
+        {
+           // echo "No results found";
+            $notfound++;
+        }
+    }
+
+    $bool=0;
 }
+
+// no results found for any of the local places searched by the category type from the user
+if($notfound==$ttl){
+    echo"No results found, please choose a different category.";
+}
+else{
 echo"<button id='S4' class='sub' type='submit' name='submit' style='cursor: pointer;'>Submit</button>";
-echo"</ul> </form>"
-
-
+echo"</ul> </form>";
+}
 ?>
+
