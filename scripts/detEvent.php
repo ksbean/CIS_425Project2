@@ -335,7 +335,7 @@ if($notfound==$ttl){
     echo"No results found, please choose a different category.";
 }
 else{
-echo"<button id='S4' class='sub' type='submit' name='submit' style='cursor: pointer;'>Submit</button>";
+echo"<button id='S4' class='sub' type='submit' name='submit' style='cursor: pointer;'>View Map</button>";
 echo"</ul> </form>";
 }
 ?>
