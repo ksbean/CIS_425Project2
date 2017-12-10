@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Activity Finder</title>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="Styles/IndexStyles.css">
-	</head>
-	<header>
-		<h1>Search Parameter Entrance</h1>
-	</header>
-	<body>
-		<form id="form3" class='Uform' name="form3" method="post" action="Php_Scripts/detEvent.php">
-			<div id="formfitter">
-				<p class="inputtxt">Radius: <input class="Uinfo" type="number" name="radius" id="radius" min="0" max="50000" required></p>
-				<p class="inputtxt">Category:
-					<select required id='select' class="Uinfo" name='cat_select_val'> </p>
+
+<head>
+    <title>Activity Finder</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Styles/IndexStyles.css">
+</head>
+<header>
+    <h1>Search Parameter Entrance</h1>
+</header>
+
+<body>
+    <form id="form3" class='Uform' name="form3" method="post" action="scripts/detEvent.php">
+        <div id="formfitter">
+            <p class="inputtxt">Radius: <input class="Uinfo" type="number" name="radius" id="radius" min="0" max="50000" required></p>
+            <p class="inputtxt">Category:
+                <select required id='select' class="Uinfo" name='cat_select_val'> </p>
 								<option value='school university'>School</option>
 								<option value='airport'>Airport</option>
 								<option value='zoo spa park museum movie_theater casino campground amusement_park aquarium art_gallery bowling_alley spa'>Entertainment</option>
@@ -26,8 +28,9 @@
 								<option value='gym'>Gym</option>
 								<option value='lodging' name='hotel'>Hotel</option>
 						</select>
-			</div>
-			<button id="S3" class="sub" type="submit" name="submit" style="cursor: pointer;">Search</button>
-		</form>
-	</body>
+        </div>
+        <button id="S3" class="sub" type="submit" name="submit" style="cursor: pointer;">Search</button>
+    </form>
+</body>
+
 </html>
