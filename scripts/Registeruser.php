@@ -20,7 +20,10 @@ $dbCon = mysqli_connect("localhost", "root", "pa55word", "userinfo");
 			if (isset($_POST['twone'])){
 			$twen=1;
 			$_SESSION['twen']=$twen;
+			$ins = "INSERT INTO `users`(`username`, `password`, `twentyone`) VALUES ('$username','$password','$twen')";
+			$mysqlbit= mysqli_query($dbCon,$ins);
 			}
+
 			else{
 			$twen=0;
 			$ins = "INSERT INTO `users`(`username`, `password`, `twentyone`) VALUES ('$username','$password','$twen')";

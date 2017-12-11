@@ -45,8 +45,9 @@
 						header("Location: ../Searchpage.html"); 
 					}
 				}
+				mysqli_close($link);
 			}
-			mysqli_close();
+			mysqli_close($dbCon);
 		}
 	}			
 	else{
